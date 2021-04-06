@@ -5,6 +5,23 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "Debug J-Link",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/build/stm32-freertos.elf",
+            "serverpath": "/opt/SEGGER/JLink/JLinkGDBServerCLExe",
+            "servertype": "jlink",
+            "device": "STM32F303RE",
+            "interface": "jtag",
+            "serialNumber": "", //If you have more than one J-Link probe, add the serial number here.
+            "runToMain": true,
+            "armToolchainPath": "/usr/bin/",
+            "svdFile": "${workspaceRoot}/misc/STM32F303.svd",
+            "preLaunchTask": "build",
+            "showDevDebugOutput": false
+        },
+        {
             "name": "cortex-debug",
             "type": "cortex-debug",
             "request": "launch",
@@ -14,18 +31,16 @@
             "interface": "swd",
             "device": "STM32F303RE",
             "armToolchainPath": "/usr/bin",
-            "configFiles": ["/usr/share/openocd/scripts/board/st_nucleo_f3.cfg"],
-            "searchDir":["/usr/share/openocd/scripts/board/"],
+            "configFiles": [
+                "$/usr/share/openocd/scripts/board/st_nucleo_f3.cfg"
+            ],
+            "searchDir": [
+                "/usr/share/openocd/scripts/board/"
+            ],
             "svdFile": "${workspaceRoot}/misc/STM32F303.svd",
             "runToMain": true,
             "preLaunchTask": "build",
-            "preLaunchCommands": [
-                "set mem inaccessible-by-default off",
-                "set verbose off",
-                "monitor arm semihosting enable"
-            ],
-            "showDevDebugOutput":false
-            
+            "showDevDebugOutput": false
         }
     ]
 }
