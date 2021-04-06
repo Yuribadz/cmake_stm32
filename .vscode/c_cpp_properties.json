@@ -4,18 +4,20 @@
         {
             "name": "Linux-arm-cross-platform",
             "includePath": [
-                "${workspaceFolder}/**",
-                "~/STM32Cube_FW_F3_V1.10.0/**",
-                "~/STM32Cube_FW_F3_V1.10.0/Drivers/STM32F3xx_HAL_Driver/Inc/**"
+                "${workspaceFolder}/src",
+                "${workspaceFolder}/inc",
+                "~/STM32CubeF3-master/Drivers/STM32F3xx_HAL_Driver/Inc/Legacy",
+                "~/STM32CubeF3-master/Drivers/STM32F3xx_HAL_Driver/Inc",
+                "~/STM32CubeF3-master/Drivers/STM32F3xx_HAL_Driver/Src"
             ],
-            "defines": ["STM32F303RE","USE_HAL_DRIVER","\"_DEBUG\",",
-                "\"UNICODE\",",
-                "\"_UNICODE\""],
+            "defines": ["STM32F303RE","USE_HAL_DRIVER",
+                "USE_DEVICE_MODE",
+                "USE_FULL_ASSERT"],
             "compilerPath": "arm-none-eabi-g++",
             "cStandard": "c11",
-            "cppStandard": "c++17",
+            "cppStandard": "c++14",
             "compileCommands": "${workspaceFolder}/build/compile_commands.json",
-            "intelliSenseMode": "gcc-arm",
+            "intelliSenseMode": "clang-x64",
             "configurationProvider": "ms-vscode.cmake-tools"
         }
     ]   

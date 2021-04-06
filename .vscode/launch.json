@@ -13,13 +13,26 @@
             "serverpath": "/opt/SEGGER/JLink/JLinkGDBServerCLExe",
             "servertype": "jlink",
             "device": "STM32F303RE",
-            "interface": "jtag",
+            "interface": "swd",
             "serialNumber": "", //If you have more than one J-Link probe, add the serial number here.
             "runToMain": true,
             "armToolchainPath": "/usr/bin/",
             "svdFile": "${workspaceRoot}/misc/STM32F303.svd",
             "preLaunchTask": "build",
-            "showDevDebugOutput": false
+            "swoConfig": {
+                "enabled": true,
+                "cpuFrequency": 8000000,
+                "swoFrequency": 2000000,
+                "source": "probe",
+                "decoders": [
+                    { "type": "console", "label": "ITM", "port": 0 }
+                ]
+            },
+            "showDevDebugOutput": false,
+            "rtos": "/opt/SEGGER/JLink/GDBServer/RTOSPlugin_FreeRTOS.so",
+            "serverArgs": [
+                "-vd -speed 8000 -s -endian little"
+            ]
         },
         {
             "name": "cortex-debug",

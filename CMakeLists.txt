@@ -13,7 +13,7 @@ add_executable(stm32-freertos src/main.c
 target_sources(stm32-freertos
   PRIVATE 
   src/main.c
-  src/FreeRTOS-openocd.c
+  src/cmsis_os2.c
 )
 target_include_directories(stm32-freertos
   PRIVATE
@@ -25,6 +25,7 @@ target_link_libraries(stm32-freertos PRIVATE
     FreeRTOS::Timers
     FreeRTOS::Heap::4
     FreeRTOS::ARM_CM4F 
+    HAL::STM32::F3::EXTI
     HAL::STM32::F3::RCC
     HAL::STM32::F3::GPIO
     HAL::STM32::F3::CORTEX
