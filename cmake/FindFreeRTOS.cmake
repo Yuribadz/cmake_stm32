@@ -8,7 +8,7 @@ list(REMOVE_DUPLICATES FreeRTOS_FIND_COMPONENTS)
 set(FreeRTOS_HEAPS 1 2 3 4 5)
 
 if(NOT FREERTOS_PATH)
-    set(FREERTOS_PATH /opt/FreeRTOS CACHE PATH "Path to FreeRTOS")
+    set(FREERTOS_PATH ../freertos/FreeRTOS CACHE PATH "Path to FreeRTOS")
     message(STATUS "No FREERTOS_PATH specified using default: ${FREERTOS_PATH}")
 endif()
 
