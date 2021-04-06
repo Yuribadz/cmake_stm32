@@ -1,0 +1,31 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "cortex-debug",
+            "type": "cortex-debug",
+            "request": "launch",
+            "cwd": "${workspaceRoot}/build",
+            "executable": "${workspaceRoot}/build/stm32-freertos.elf",
+            "servertype": "openocd",
+            "interface": "swd",
+            "device": "STM32F303RE",
+            "armToolchainPath": "/usr/bin",
+            "configFiles": ["/usr/share/openocd/scripts/board/st_nucleo_f3.cfg"],
+            "searchDir":["/usr/share/openocd/scripts/board/"],
+            "svdFile": "${workspaceRoot}/misc/STM32F303.svd",
+            "runToMain": true,
+            "preLaunchTask": "build",
+            "preLaunchCommands": [
+                "set mem inaccessible-by-default off",
+                "set verbose off",
+                "monitor arm semihosting enable"
+            ],
+            "showDevDebugOutput":false
+            
+        }
+    ]
+}

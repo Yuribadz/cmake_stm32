@@ -1,0 +1,17 @@
+{
+    "cmake.generator": "Unix Makefiles",
+    "cmake.configureEnvironment": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "on"
+    },
+    "cmake.configureSettings": {
+        "CMAKE_MODULE_PATH":"cmake",
+        "STM32_TOOLCHAIN_PATH":"/usr/bin",
+        "STM32_TARGET_TRIPLET":"arm-none-eabi",
+        "STM32_CHIP": "STM32F303RE",
+        "STM32Cube_DIR":"~/STM32Cube_FW_F3_V1.10.0",
+        "STM32_CUBE_F4_PATH":"~/STM32Cube_FW_F3_V1.10.0",
+    },
+    "C_Cpp.default.intelliSenseMode": "gcc-arm",
+    "cortex-debug.armToolchainPath": "/usr/bin",
+    "cortex-debug.openocdPath": "/usr/bin/openocd"
+}

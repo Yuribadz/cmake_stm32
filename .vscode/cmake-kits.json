@@ -1,0 +1,9 @@
+[{
+    "name": "C/C++ CMake-Kit arm none eabi EYURBAD",
+    "toolchainFile":"cmake/stm32_gcc.cmake",
+    "compilers": {      
+      "CC":"/usr/bin/arm-none-eabi-gcc",
+      "C": "/usr/bin/arm-none-eabi-gcc",
+      "CXX":"/usr/bin/arm-none-eabi-g++"
+    }
+  }]

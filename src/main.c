@@ -1,12 +1,13 @@
+
 #include <FreeRTOS.h>
 #include <task.h>
 #include <timers.h>
 
-#include <stm32f4xx_hal.h>
+#include <stm32f3xx_hal.h>
 
 // STM32F4-Discovery green led - PD12
-#define LED_PORT                GPIOD
-#define LED_PIN                 GPIO_PIN_12
+#define LED_PORT                GPIOA
+#define LED_PIN                 GPIO_PIN_5
 #define LED_PORT_CLK_ENABLE     __HAL_RCC_GPIOD_CLK_ENABLE
 
 static void blinky(void *arg)
